@@ -1,14 +1,10 @@
 # sql_db.py
 
-import sqlite3
-from sqlite3 import Error
 import random
 from datetime import date, timedelta
 from tqdm import tqdm
 import pandas as pd
 from sqlalchemy import create_engine
-
-DATABASE_NAME = "mydatabase.db"
 
 def create_connection(dburl):
     """ Create or connect to an SQLite database """
