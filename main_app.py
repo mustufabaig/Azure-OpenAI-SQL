@@ -23,6 +23,7 @@ def query_database(query):
 
 # Create or connect to SQLite database
 conn = sql_db.create_connection(snowflake_url)
-results = conn.execute('select current_version()').fetchone()
-st.code(results[0])
 
+# Schema Representation for finances table
+schemas = sql_db.get_schema_representation()
+print(schemas['finances'])
