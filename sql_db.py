@@ -6,14 +6,16 @@ import random
 from datetime import date, timedelta
 from tqdm import tqdm
 import pandas as pd
+from sqlalchemy import create_engine
 
 DATABASE_NAME = "mydatabase.db"
 
-def create_connection():
+def create_connection(dburl):
     """ Create or connect to an SQLite database """
     conn = None;
+    engine = create_engine(dburl)
     try:
-        conn = sqlite3.connect(DATABASE_NAME)
+        conn = engine.connect()
     except Error as e:
         print(e)
     return conn
