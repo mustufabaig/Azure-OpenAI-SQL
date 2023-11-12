@@ -1,8 +1,5 @@
-from dotenv import load_dotenv
 import os
 import openai
-
-load_dotenv()
 
 openai.api_type = "azure"
 openai.api_base = "https://azureopenai-vastmindz.openai.azure.com/"
